@@ -33,10 +33,10 @@ function contact(event) {
     loading.classList += " modal__overlay--visible"
     emailjs
     .sendForm(
-        'service_pcq1cih',
-        'template_sl9ike8',
+        'service_f4gs0yy',
+        'template_txsj9os',
         event.target,
-        'rbEVYvX32ReE_7wLx'
+        '95mZKTIRFXvidIG1K'
     )
     .then (() => {
         loading.classList.remove("modal__overlay--visible")
@@ -45,7 +45,7 @@ function contact(event) {
     .catch (() => {
         loading.classList.remove("modal__overlay--visible")
     alert(
-        "This email service is temporarily unavailable. Please contact me directly on jdblair78@gmail.com"
+        "This email service is temporarily unavailable. Please contact me directly at amberspake1@gmail.com"
     )
     })
 }
