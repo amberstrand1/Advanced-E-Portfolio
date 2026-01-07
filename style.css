@@ -130,24 +130,27 @@ nav,
 .header {
     opacity: 1;
     visibility: visible;
-    transition: all 600ms 400ms;
+    transition: all 600ms 800ms;
 }
 
-.modal__open nav,
-.modal__open .scroll,
-.modal__open .header {
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
     opacity: 0;
     visibility: hidden;
-    transition: all 400ms 200ms;
+    transition: all 400ms;
 }
 
+.dark-theme body,
+.dark-theme #landing--page {
+    background-color: #242424;
+}
 .dark-theme .title,
 .dark-theme .section__title,
 .dark-theme .section__subtitle,
 .dark-theme .nav__link--anchor,
 .dark-theme .fa-circle-half-stroke,
-.dark-theme .header__para 
-{
+.dark-theme .header__para {
     color: white;
 }
 
@@ -155,7 +158,7 @@ nav,
     background-color: #242424;
 }
 
-.dark-theme #personal-logo {
+.dark-theme #personal--logo {
     filter: none;
 }
 
@@ -166,6 +169,10 @@ nav,
 .dark-theme .scroll__icon:after,
 .dark-theme .link__hover-effect--black:after {
     background-color: white;
+}
+
+.dark-theme .link__hover-effect--white:after {
+    background-color: #242424;
 }
 
 .dark-theme .mail__btn {
@@ -330,7 +337,6 @@ MODAL
     width: 90%;
     max-width: 1100px;
     height: 700px;
-    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.55);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -339,7 +345,7 @@ MODAL
     transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
 
-.modal__open .modal{
+.modal--open .modal{
     z-index: 60;
     box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
     visibility: visible;
@@ -355,8 +361,14 @@ MODAL
     transition: all 300ms ease-in;
 }
 
+.modal--open .modal__about,
+.modal--open .modal__contact {
+    transform: translateX(0%);
+}
+
 .modal__about {
     background-color: rgb(245, 245, 245);
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -448,7 +460,7 @@ MODAL
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex; 
+    display: none; 
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -469,6 +481,7 @@ MODAL
 
 .modal__overlay--visible {
     z-index: 1;
+    display: flex;
 }
 
 .fa-spinner {
